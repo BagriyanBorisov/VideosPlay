@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <script src="/app.js" type="module"></script>
+    <title>VideosPlay</title>
+</head>
+
+<body>
+    <div id="box">
+
+        <header>
+            <!-- Navigation -->
+            <h1><img src="/images/logo.png" height="35px" width="50px"><a class="home" href="/">VideosPlay</a>  </h1>
+
+            <nav>
+                <a href="/catalog">All videos</a>
+                <!-- Logged-in users -->
+                <div id="user">
+                    <a href="/create">Upload Video</a>
+                    <a href="/logout">Logout</a>
+                </div>
+                <!-- Guest users -->
+                <div id="guest">
+                    <a href="/login">Login</a>
+                    <a href="/register">Register</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main id="main-content">
+           
+                
+        </main>
+
+        <!--Home Page-->
+        <section id="welcome-world">
+
+            <div class="welcome-message">
+                <h2>Welcome to</h2>
+                <h3>VideosPlay</h3>
+            </div>
+            <img src="./images/logo.png" alt="hero">
+             <div class="data-buttons">
+                <a href="/catalog"  class="btn details-btn">Go to the catalog</a>
+              </div>  
+        </section>
+
+           <!-- Catalogue -->
+           <section id="catalog">
+           <div id="home-page">
+            <h1>Watch Videos</h1>
+    
+            <div class="game">
+                <div class="image-wrap">
+                    <iframe width="424" height="238" src="https://www.youtube.com/embed/7l-1lYccBs0" title="idk chief" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <h3>CSGO Ace</h3>
+                
+        <h6>Uploaded By: {username}</h6>
+                <div class="data-buttons">
+                    <a href="/like/${item._id}" class="btn details-btn">Like</a>
+                    <a href="/catalog/${item._id}" class="btn details-btn">Details</a>
+                </div>
+            </div>
+
+   
+    <div class="game">
+        <div class="image-wrap">
+            <iframe width="424" height="238" src="https://www.youtube.com/embed/7l-1lYccBs0" title="idk chief" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <h3>Title</h3>
+        
+        <h6>Uploaded By: {username}</h6>
+        <div class="data-buttons">
+            <a href="/catalog/${item._id}" class="btn details-btn">Details</a>
+        </div>
+    </div>
+
+    <div class="game">
+        <div class="image-wrap">
+            <iframe width="424" height="238" src="https://www.youtube.com/embed/7l-1lYccBs0" title="idk chief" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <h3>Title</h3>
+        <h6>Uploaded By: {username}</h6>
+        <div class="data-buttons">
+            <a href="/catalog/${item._id}" class="btn details-btn">Details</a>
+        </div>
+    </div>
+         </div>
+        </section>
+
+        <!-- Login Page ( Only for Guest users ) -->
+
+
+        <!-- Register Page ( Only for Guest users ) -->
+
+
+        <!-- Create Page ( Only for logged-in users ) -->
+
+
+        <!-- Edit Page ( Only for the creator )-->
+
+
+        <!--Details Page-->
+
+     
+    </div>
+</body>
+
+</html>
