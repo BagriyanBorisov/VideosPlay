@@ -82,7 +82,7 @@
     border-radius: 15px;
     float: left;
     height: auto;
-    color: rgb(148, 136, 255);
+    color: rgb(255, 79, 79);
 }
 
 .image-wrap {
@@ -171,4 +171,13 @@
     font-weight: 700;
     font-size: 60px;
     font-family: "Agency FB";
+}
+
+.goto-catalogBtn {
+    background-color: #009de0;
+    font-size: 1.4rem;
+    padding-top: 20px;
+    margin-top: 10px;
+    color: white;
+    padding: 0.9em 1.4em;
 }

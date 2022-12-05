@@ -25,9 +25,9 @@
 }
 
 .brand-logo {
-    height: 100px;
-    width: 100px;
-    background: url("../images/icon-gamepad-2.png");
+    height: 62px;
+    width: 62px;
+    background: url("../images/playlogo.jpg");
     margin: auto;
     border-radius: 50%;
     box-sizing: border-box;
@@ -69,7 +69,7 @@ label:nth-of-type(2) {
 
 input::placeholder {
     color: rgba(184, 179, 179, 0.678);
-};
+}
 
 
 label[for="female"] {

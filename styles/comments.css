@@ -8,6 +8,8 @@
 }
 
 .details-comments {
+    padding-right: 13px;
+    margin-right: 13px;
     display: table-cell;
 }
 
