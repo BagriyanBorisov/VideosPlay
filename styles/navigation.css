@@ -14,7 +14,7 @@ body {
 
 header,
 footer {
-    background-color: #29303c;
+    background-color: rgba(32, 32, 53, 0.87);
     width: 100%;
     overflow: hidden;
     color: white;
@@ -26,23 +26,23 @@ footer {
 }
 
 header {
+    border-radius: 13px;
     position: relative;
     padding: 10px;
 }
 
 header h1 {
     display: inline-block;
-    background-color: #29303c;
     color: white;
     margin-bottom: auto;
 }
 
 header nav {
-    font-size: auto;
+    font-size: 22px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     position: absolute;
     right: 0;
-    bottom: 8px;
+    bottom: 16px;
 }
 
 header nav>* {
@@ -63,7 +63,7 @@ nav a {
 
 nav a:hover {
     cursor: pointer;
-    color: rgb(124, 184, 190);
+    color: rgb(178, 247, 255);
     font-weight: bolder;
 }
 

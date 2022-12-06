@@ -5,7 +5,7 @@
     border-radius: 20px;
     padding: 40px;
     box-sizing: border-box;
-    background: #3e4443;
+    background: rgba(32, 32, 53, 0.85);
     box-shadow: 0px 0px 32px 0px #49535e, -14px -14px 20px #191c21;
 }
 
@@ -16,7 +16,7 @@
     border-radius: 20px;
     padding: 40px;
     box-sizing: border-box;
-    background: #3e4443;
+    background: rgba(32, 32, 53, 0.85);
     box-shadow: 0px 0px 32px 0px #49535e, -14px -14px 20px #191c21;
 }
 
@@ -31,7 +31,7 @@
     margin: auto;
     border-radius: 50%;
     box-sizing: border-box;
-    box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px white;
+    box-shadow: 4px 4px 4px #cbced1, -4px -4px 4px white;
 }
 
 .container>h1 {
@@ -96,14 +96,14 @@ label[for="terms"]>input {
 
 .btn.submit {
     margin-top: 30px;
-    background: #778e9c;
+    background: rgb(91, 152, 196);
     height: 60px;
     border-radius: 20px;
     color: white;
     font-size: 26px;
     cursor: pointer;
     font-weight: 900;
-    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    box-shadow: 2px 2px 2px #cbced1, -2px -2px 2px white;
     transition: 0.5s;
 }
 
@@ -124,7 +124,7 @@ label[for="terms"]>input {
     right: 8px;
     text-decoration: none;
     color: black;
-    background: rgb(235, 157, 142);
+    background: rgba(91, 152, 196, 0.52);
     border-radius: 10px;
     padding: 5px;
 }

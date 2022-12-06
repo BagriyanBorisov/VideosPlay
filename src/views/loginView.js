@@ -32,7 +32,7 @@ function loginTemplate(onSubmit) {
             <input type="email" id="email" name="email" placeholder="Sokka@gmail.com">
 
             <label for="login-pass">Password:</label>
-            <input type="password" id="login-password" name="password">
+            <input type="password" id="login-password" placeholder="*********" name="password">
             <input type="submit" class="btn submit" value="Login">
             <p class="field">
                 <span>If you don't have profile click <a href="/register">here</a></span>

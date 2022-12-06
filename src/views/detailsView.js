@@ -8,6 +8,7 @@ export async function showDetails(ctx) {
     let id = ctx.params.id;
     let item = await getById(id);
     let comments = await getAllComments(id);
+    comments = comments.reverse();
     ctx.render(detailsTemplate(item, isUser(),isCreator(),onDelete,comments,onSubmit));
 
     function isUser(){
@@ -41,7 +42,8 @@ export async function showDetails(ctx) {
         if(!comment){
             return alert('Cannot send an empty comment!');
         }
-        await createComment({gameId: id,comment, username: ctx.user.username});
+        let time =  new Date().toLocaleString("en-US", {timeZone: "Europe/Sofia"})
+        await createComment({gameId: id,comment, username: ctx.user.username, time});
         e.target.reset();
         ctx.page.redirect('/catalog/'+ id);
     }
@@ -50,21 +52,29 @@ export async function showDetails(ctx) {
 
 function detailsTemplate(item,isUser,isCreator,onDelete,comments,onSubmit){
     return html ` <section id="game-details">
-        <h1>Video Details</h1>
+        <h1>${item.title}</h1>
         <div class="info-section">
-            <div class="center">
-                <h1>${item.title}</h1>
+            <div class="center game-header">
                 <p class="type" >Category: ${item.category}</p>
-                <iframe class="game-img" width="600" height="400" src="${item.videoUrl}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe class="game-img" src="${item.videoUrl}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
            
             ${isUser && !isCreator
                     ?  html`
-                         <a  href="javascript:void(0)" class="button">Like</a>
-                         <h2 style="margin-bottom: 10px display: inline-block">Likes: 0</h2>` 
+                         <a  href="javascript:void(0)" class="like-button">Like</a>
+                         <h2 class="likes-header">Likes: 0</h2>` 
                     : nothing}
             
             <!-- Bonus ( for Guests and Users ) -->
+            ${isUser && !isCreator ? html `<article class="create-comment">
+                <label>Add new comment:</label>
+                <form @submit="${onSubmit}" class="form">
+                    <input class="textarea" name="comment"  placeholder="Comment......">
+                    <input class="btn comment" type="submit" value="Add Comment">
+                </form>
+            </article>
+            ` : nothing}
+            
             <div class="details-comments">
                 <h2>Comments:</h2>
                 ${comments.length ? html` <ul>
@@ -84,19 +94,13 @@ function detailsTemplate(item,isUser,isCreator,onDelete,comments,onSubmit){
 
         <!-- Bonus -->
         <!-- Add Comment ( Only for logged-in users, which is not creators of the current game ) -->
-        ${isUser && !isCreator ? html `<article class="create-comment">
-            <label>Add new comment:</label>
-            <form @submit="${onSubmit}" class="form">
-                <textarea name="comment" placeholder="Comment......"></textarea>
-                <input class="btn submit" type="submit" value="Add Comment">
-            </form>
-        </article> 
-           ` : nothing}
+       
     </section>`
 }
 
 function commentTemplate(comment){
   return html ` <li class="comment">
-        <p>${comment.username}: ${comment.comment}</p>
+        <p>${comment.time}</p>
+        <p>${comment.username}: ${comment.comment} </p>
     </li>`
 }

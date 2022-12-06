@@ -138,6 +138,7 @@
 }
 
 .details-btn {
+    border-radius: 13px;
     background-color: #fd5454;
     font-size: 1.4rem;
     padding-top: 20px;
@@ -174,10 +175,16 @@
 }
 
 .goto-catalogBtn {
+    border-radius: 13px;
     background-color: #009de0;
     font-size: 1.4rem;
     padding-top: 20px;
     margin-top: 10px;
     color: white;
     padding: 0.9em 1.4em;
+}
+
+.goto-catalogBtn:hover {
+    color: white;
+    background-color: #70b3dc;
 }

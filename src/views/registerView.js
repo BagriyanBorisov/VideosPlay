@@ -38,10 +38,10 @@ function registerTemplate(onSubmit) {
                 <input type="email" id="email" name="email" placeholder="maria@email.com">
 
                 <label for="pass">Password:</label>
-                <input type="password" name="password" id="register-password">
+                <input type="password" name="password" placeholder="*********" id="register-password">
 
                 <label for="con-pass">Confirm Password:</label>
-                <input type="password" name="confirm-password" id="confirm-password">
+                <input type="password" name="confirm-password" placeholder="*********" id="confirm-password">
 
                 <input class="btn submit" type="submit" value="Register">
 
