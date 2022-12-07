@@ -116,7 +116,8 @@
 
 .button {
     height: 15%;
-    background-color: #54557b;
+    background-color: rgb(91, 152, 196);
+    border-radius: 13px;
     padding: 14px;
     margin-top: auto;
     font-size: 21px;
@@ -131,13 +132,19 @@
 }
 
 .button:hover {
-    background-color: #6f5d9c;
+    background-color: rgb(20, 107, 164);
+    color: white;
+}
+
+.like-button:hover {
+    background-color: #b1112c;
     color: white;
 }
 
 .like-button {
     height: 15%;
     background-color: #e21e4a;
+    border-radius: 13px;
     padding: 14px;
     margin-top: auto;
     font-size: 21px;

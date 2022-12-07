@@ -4,9 +4,6 @@ export async function getAll(){
     return await api.get('data/games?sortBy=_createdOn%20desc');
 }
 
-export async function getLatest(){
-    return await api.get('data/games?sortBy=_createdOn%20desc&distinct=category')
-}
 export async function getById(id){
     return await api.get('data/games/'+id);
 }
@@ -29,4 +26,12 @@ export async function createComment(data){
 
 export async function updateGame(id,data){
     return await api.put('data/games/'+id, data)
+}
+
+export async function sendLike(data){
+    return await api.post('data/likes', data)
+}
+
+export async function getLikesCount(gameId){
+    return await api.get(`data/likes?where=gameId%3D%22${gameId}%22`)
 }

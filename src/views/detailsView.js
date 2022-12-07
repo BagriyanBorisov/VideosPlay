@@ -61,11 +61,20 @@ function detailsTemplate(item,isUser,isCreator,onDelete,comments,onSubmit){
            
             ${isUser && !isCreator
                     ?  html`
+                        <div class="buttons">
                          <a  href="javascript:void(0)" class="like-button">Like</a>
-                         <h2 class="likes-header">Likes: 0</h2>` 
+                            <h2 class="likes-header">Likes: 0</h2>
+                        </div>
+                        ` 
                     : nothing}
-            
-            <!-- Bonus ( for Guests and Users ) -->
+
+            <!-- Edit/Delete buttons ( Only for creator of this game )  -->
+            ${isCreator ? html` <div class="buttons">
+                <a href="/edit/${item._id}" class="button">Edit</a>
+                <a  @click=${onDelete} href="javascript:void(0)" class="button">Delete</a>
+            </div>` : nothing}
+
+            <!-- Add Comment ( Only for logged-in users, which is not creators of the current game ) -->
             ${isUser && !isCreator ? html `<article class="create-comment">
                 <label>Add new comment:</label>
                 <form @submit="${onSubmit}" class="form">
@@ -85,15 +94,11 @@ function detailsTemplate(item,isUser,isCreator,onDelete,comments,onSubmit){
             </div>
 
             <!-- Edit/Delete buttons ( Only for creator of this game )  -->
-            ${isCreator ? html` <div class="buttons">
-                <a href="/edit/${item._id}" class="button">Edit</a>
-                <a  @click=${onDelete} href="#" class="button">Delete</a>
-            </div>` : nothing}
+          
            
         </div>
-
-        <!-- Bonus -->
-        <!-- Add Comment ( Only for logged-in users, which is not creators of the current game ) -->
+        
+       
        
     </section>`
 }
