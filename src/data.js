@@ -32,6 +32,18 @@ export async function sendLike(data){
     return await api.post('data/likes', data)
 }
 
-export async function getLikesCount(gameId){
-    return await api.get(`data/likes?where=gameId%3D%22${gameId}%22`)
+export async function getLikeCount(gameId){
+    return await api.get(`data/likes?where=gameId%3D%22${gameId}%22&distinct=_ownerId&count`);
+}
+
+export async function checkLike(gameId, userId){
+    return await api.get(`data/likes?where=gameId%3D%22${gameId}%22%20and%20_ownerId%3D%22${userId}%22&count`)
+}
+
+export async function deleteLikeById(id){
+    return await api.del('data/likes/'+id);
+}
+
+export async function getLikeId(gameId,userId){
+    return await api.get(`data/likes?where=gameId%3D%22${gameId}%22%20and%20_ownerId%3D%22${userId}%22`);
 }

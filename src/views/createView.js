@@ -36,7 +36,7 @@ function createTemplate(onSubmit){
                 <input type="text" id="category" name="category" placeholder="Enter category...">
                 
                 <label for="game-img">Video Url:</label>
-                <input type="text" id="videoUrl" name="videoUrl" placeholder="Upload a photo...">
+                <input type="text" id="videoUrl" name="videoUrl" placeholder="Upload a videoUrl...">
                 
                 <input class="btn submit" type="submit" value="Upload Video">
             </div>
